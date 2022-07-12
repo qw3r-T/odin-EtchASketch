@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#gridContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    height: 400px;
+}
+.gridElement {
+    border: 2px solid black;
+    box-sizing: border-box;
+}
