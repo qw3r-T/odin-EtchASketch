@@ -9,10 +9,25 @@ function createDiv(size) {
 };
 
 function createGrid(size) {
+    removeGrid();
     const container = document.getElementById('gridContainer');
     for (let i = 0; i < size**2; i++) {
         container.appendChild(createDiv(container.clientWidth / size));
     };
 };
 
-createGrid(16)
+function removeGrid() {
+    const container = document.getElementById('gridContainer');   
+    while (container.firstChild) {
+        container.removeChild(container.lastChild);
+    };
+};
+
+function resetButton() {
+    const resetButton = document.getElementById('resetButton');
+    const slider = document.getElementById('slider');
+    resetButton.addEventListener('click',() => createGrid(slider.value));
+};
+
+createGrid(3);
+resetButton();
