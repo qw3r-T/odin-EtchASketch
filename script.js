@@ -2,8 +2,8 @@ function createDiv(size) {
     const div = document.createElement('div');
     div.classList.add('gridElement');
     div.style.width = `${size}px`;
-    div.style.width = `${size}px`;
-    div.addEventListener('mouseover',(e) => e.target.style.backgroundColor = 'blue');
+    div.style.height = `${size}px`;
+    div.addEventListener('mouseover',(e) => e.target.style.backgroundColor = 'greenyellow');
 
     return div;
 };
@@ -12,7 +12,7 @@ function createGrid(size) {
     removeGrid();
     const container = document.getElementById('gridContainer');
     for (let i = 0; i < size**2; i++) {
-        container.appendChild(createDiv(container.clientWidth / size));
+        container.appendChild(createDiv(700 / size));
     };
 };
 
@@ -29,5 +29,5 @@ function resetButton() {
     resetButton.addEventListener('click',() => createGrid(slider.value));
 };
 
-createGrid(3);
+createGrid(15);
 resetButton();
